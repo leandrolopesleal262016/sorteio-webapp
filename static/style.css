@@ -1,0 +1,125 @@
+/* static/style.css */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+.input-section {
+    margin-bottom: 20px;
+}
+
+.nome-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    background-color: #1a73e8;
+    color: white;
+}
+
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+    background-color: #1557b0;
+}
+
+.sortear-section {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn-sortear, .btn-novo-sorteio {
+    flex: 1;
+    font-size: 16px;
+    padding: 15px;
+    background-color: #34a853;
+}
+
+.btn-sortear:hover:not(:disabled),
+.btn-novo-sorteio:hover:not(:disabled) {
+    background-color: #2d8e47;
+}
+
+.btn-reiniciar {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #ea4335;
+}
+
+.btn-reiniciar:hover {
+    background-color: #d33828;
+}
+
+.lista-nomes, .lista-ganhadores {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.lista-nomes p, .lista-ganhadores p {
+    margin: 5px 0;
+    padding: 5px;
+    background-color: #f8f9fa;
+    border-radius: 3px;
+}
+
+.lista-ganhadores p {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+.resultados-section {
+    margin-top: 20px;
+}
+
+.animate-sorteio {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
