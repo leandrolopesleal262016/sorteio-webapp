@@ -2,12 +2,17 @@ from flask import Flask, render_template, request, jsonify, send_from_directory
 import pyttsx3
 import random
 import os
+import webbrowser
+from threading import Timer
 
 app = Flask(__name__)
 
 # Listas globais para armazenar os nomes
 nomes = []
 nomes_sorteados = []
+
+def open_browser():
+    webbrowser.open('http://127.0.0.1:5000/')
 
 @app.route('/')
 def index():
@@ -53,5 +58,7 @@ def reiniciar():
     return jsonify({'success': True})
 
 if __name__ == '__main__':
-    os.makedirs('static/audio', exist_ok=True)
-    app.run(debug=True)
+    # Abre o navegador após 1.5 segundos
+    Timer(1.5, open_browser).start()
+    # Inicia o servidor
+    app.run(debug=False, port=5000)
